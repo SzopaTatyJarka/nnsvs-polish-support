@@ -16,8 +16,8 @@ The /hed folders contains the HED file.
 You can change the hed file in config.yaml, which is found at `/train/config.yaml`.
 Nota that while training you have to change "in_dim" in `/train/conf/train/*/model/*.yaml` to following values if using "sztp_polish.hed":
 
-* acoustic: 322
-* duration: 318
-* timelag: 318
+* acoustic: 317
+* duration: 313
+* timelag: 313
 
 Special thanks to [Causticism](https://github.com/causticism) for helping me with the project.
