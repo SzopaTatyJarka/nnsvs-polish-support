@@ -5,7 +5,7 @@ The repo contains HED and .table files required for NNSVS to support training an
 The phoneme set is based on Fyń's Arpabet which mimics the way the language is written, as well as some additional phonemes to cover lesser appearing sounds in the language.
 The estimated amount of audio required for a high-quality result is 2-3 hours without silences.
 
-*NNSVS Model showcase built on 1 hour of refference data for acoustics and 1,5 hours for timelag and duration*
+*Model showcase built on 1 hour of refference data for acoustics and 1,5 hours for timelag and duration using our private databases*
 
 https://user-images.githubusercontent.com/101723985/160479192-cc5b7aa1-d454-4399-86dd-0ba916725f86.mp4
 
