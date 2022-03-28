@@ -43,7 +43,7 @@ QS  "L-Nasal"                                {*^m-*,*^n-*,*^N-*,*^J-*,*^ng-*}
 QS  "L-Plosive"                              {*^p-*,*^b-*,*^t-*,*^d-*,*^k-*,*^g-*}
 QS  "L-Unvoiced_Plosive"                     {*^p-*,*^t-*,*^k-*}
 QS  "L-Voiced_Plosive"                       {*^b-*,*^d-*,*^g-*}
-QS  "L-Affricates"                           {*^c-*,*^dz-*,*^cz-*,*^dZ-*,*^C-*,*^dX-*}
+QS  "L-Affricate"                            {*^c-*,*^dz-*,*^cz-*,*^dZ-*,*^C-*,*^dX-*}
 QS  "L-Unvoiced_Affricate"                   {*^c-*,*^cz-*,*^C-*}
 QS  "L-Voiced_Affricate"                     {*^dz-*,*^dZ-*,*^dX-*}
 QS  "L-Fricative"                            {*^f-*,*^w-*,*^s-*,*^z-*,*^sz-*,*^Z-*,*^S-*,*^X-*,*^h-*,*^H-*}
@@ -118,7 +118,7 @@ QS  "C-Nasal"                                {*-m+*,*-n+*,*-N+*,*-J+*,*-ng+*}
 QS  "C-Plosive"                              {*-p+*,*-b+*,*-t+*,*-d+*,*-k+*,*-g+*}
 QS  "C-Unvoiced_Plosive"                     {*-p+*,*-t+*,*-k+*}
 QS  "C-Voiced_Plosive"                       {*-b+*,*-d+*,*-g+*}
-QS  "C-Affricates"                           {*-c+*,*-dz+*,*-cz+*,*-dZ+*,*-C+*,*-dX+*}
+QS  "C-Affricate"                            {*-c+*,*-dz+*,*-cz+*,*-dZ+*,*-C+*,*-dX+*}
 QS  "C-Unvoiced_Affricate"                   {*-c+*,*-cz+*,*-C+*}
 QS  "C-Voiced_Affricate"                     {*-dz+*,*-dZ+*,*-dX+*}
 QS  "C-Fricative"                            {*-f+*,*-w+*,*-s+*,*-z+*,*-sz+*,*-Z+*,*-S+*,*-X+*,*-h+*,*-H+*}
@@ -193,7 +193,7 @@ QS  "R-Nasal"                                {*+m=*,*+n=*,*+N=*,*+J=*,*+ng=*}
 QS  "R-Plosive"                              {*+p=*,*+b=*,*+t=*,*+d=*,*+k=*,*+g=*}
 QS  "R-Unvoiced_Plosive"                     {*+p=*,*+t=*,*+k=*}
 QS  "R-Voiced_Plosive"                       {*+b=*,*+d=*,*+g=*}
-QS  "R-Affricates"                           {*+c=*,*+dz=*,*+cz=*,*+dZ=*,*+C=*,*+dX=*}
+QS  "R-Affricate"                            {*+c=*,*+dz=*,*+cz=*,*+dZ=*,*+C=*,*+dX=*}
 QS  "R-Unvoiced_Affricate"                   {*+c=*,*+cz=*,*+C=*}
 QS  "R-Voiced_Affricate"                     {*+dz=*,*+dZ=*,*+dX=*}
 QS  "R-Fricative"                            {*+f=*,*+w=*,*+s=*,*+z=*,*+sz=*,*+Z=*,*+S=*,*+X=*,*+h=*,*+H=*}
