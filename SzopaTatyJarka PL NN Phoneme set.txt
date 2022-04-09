@@ -25,7 +25,7 @@ S - SIadł
 X - Zima
 h - CHór / Hel
 c - Car
-dz - Widz
+dz - wiDZ
 cz - CZar
 dZ - DŻins
 C - Cis
