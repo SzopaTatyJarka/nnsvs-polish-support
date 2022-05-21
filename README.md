@@ -2,8 +2,8 @@
 Files for Polish NNSVS dataset creation
 
 The repo contains HED and .table files required for NNSVS to support training and using Polish.
-The phoneme set is based on Fyń's Arpabet which mimics the way the language is written, as well as some additional phonemes to cover lesser appearing sounds in the language.
-The estimated amount of audio required for a high-quality result is 2-3 hours without silences.
+The phoneme set is based on Fyń's Alphasing which mimics the way the language is written, as well as some additional phonemes to cover lesser appearing sounds in the language.
+The estimated amount of audio required for a high-quality result is 1-2 hours without silences.
 
 *Model showcase using our Polish NNSVS library [Albert](https://github.com/SzopaTatyJarka/polish-nnsvs-voicebank-albert)*
 
@@ -21,12 +21,22 @@ The `/dic` folder contains a basic table for phonetic training.
 The `/hed` folders contain the HED file.
 
 You can change the hed file in config.yaml, which is found at `/train/config.yaml`.
-Note that while training you h
+Note that while training you have to change "in_dim" in `/train/conf/train/*/model/*.yaml` to following values if using one of the hed files:
 
-ave to change "in_dim" in `/train/conf/train/*/model/*.yaml` to following values if using "sztp_polish.hed":
+"sztp_polish.hed":
 
-* acoustic: 317
-* duration: 313
-* timelag: 313
+* acoustic: 306
+* in_rest_idx: 90
+* in_lfx0_idx: 257
+* duration: 302
+* timelag: 302
 
-*Special thanks to [Causticism](https://github.com/causticism) for helping me with the project.*
+"sztp_polish_mdn.hed":
+
+* acoustic: 195
+* in_rest_idx: 53
+* in_lfx0_idx: 146
+* duration: 191
+* timelag: 191
+
+*Special thanks to [Causticism](https://github.com/causticism) for helping with the project.*
