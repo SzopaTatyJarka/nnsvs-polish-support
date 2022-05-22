@@ -26,16 +26,16 @@ Note that while training you have to change "in_dim" in `/train/conf/train/*/mod
 "sztp_polish.hed":
 
 * acoustic: 306
-* in_rest_idx: 90
-* in_lfx0_idx: 8
+* in_rest_idx: 8
+* in_lfx0_idx: 257
 * duration: 302
 * timelag: 302
 
 "sztp_polish_mdn.hed":
 
 * acoustic: 195
-* in_rest_idx: 53
-* in_lfx0_idx: 8
+* in_rest_idx: 8
+* in_lfx0_idx: 146
 * duration: 191
 * timelag: 191
 
