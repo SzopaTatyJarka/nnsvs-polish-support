@@ -1,6 +1,6 @@
 #HED for NNSVS - Polish implementation
 #in_dim: duration & timelag 191 // acoustic 195
-#in_rest_idx: 53
+#in_rest_idx: 8
 #in_lfx0_idx: 146
 #The timbres are implemented for SzTP databases specifically. This implemementation might be changed in the future depending on circumstances.
 
@@ -12,7 +12,9 @@ QS  "Baritone"                               {*^j1_*}
 QS  "Alto"                                   {*^f1_*,*^f2_*,*^f3_*}
 QS  "Pix"                                    {*^p1_*,*^p2_*,*^p3_*,*^p4_*,*^p5_*}
 
-QS  "L-Silence"                              {*^sil-*,*^pau-*,*^br-*,*^cl-*}
+QS  "L-Silences"                              {*^sil-*,*^pau-*,*^br-*,*^cl-*}
+QS  "C-Silences"                              {*-sil+*,*-pau+*,*-br+*,*-cl+*}
+QS  "R-Silences"                              {*+sil=*,*+pau=*,*+br=*,*+cl=*}
 
 QS  "L-sil"                                  {*^sil-*}
 QS  "L-pau"                                  {*^pau-*}
@@ -62,8 +64,6 @@ QS  "L-j"                                    {*^j-*}
 QS  "L-J"                                    {*^J-*}
 QS  "L-L"                                    {*^L-*}
 
-QS  "C-Silence"                              {*-sil+*,*-pau+*,*-br+*,*-cl+*}
-
 QS  "C-sil"                                  {*-sil+*}
 QS  "C-pau"                                  {*-pau+*}
 QS  "C-br"                                   {*-br+*}
@@ -111,8 +111,6 @@ QS  "C-l"                                    {*-l+*}
 QS  "C-j"                                    {*-j+*}
 QS  "C-J"                                    {*-J+*}
 QS  "C-L"                                    {*-L+*}
-
-QS  "R-Silence"                              {*+sil=*,*+pau=*,*+br=*,*+cl=*}
 
 QS  "R-sil"                                  {*+sil=*}
 QS  "R-pau"                                  {*+pau=*}
