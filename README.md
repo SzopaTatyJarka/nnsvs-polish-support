@@ -27,7 +27,7 @@ Note that while training you have to change "in_dim" in `/train/conf/train/*/mod
 
 * acoustic: 306
 * in_rest_idx: 90
-* in_lfx0_idx: 257
+* in_lfx0_idx: 8
 * duration: 302
 * timelag: 302
 
@@ -35,7 +35,7 @@ Note that while training you have to change "in_dim" in `/train/conf/train/*/mod
 
 * acoustic: 195
 * in_rest_idx: 53
-* in_lfx0_idx: 146
+* in_lfx0_idx: 8
 * duration: 191
 * timelag: 191
 
