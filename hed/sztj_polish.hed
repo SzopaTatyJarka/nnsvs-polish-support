@@ -1,7 +1,7 @@
 #HED for NNSVS - Polish implementation
 #in_dim: duration & timelag 302 // acoustic 306
-#in_rest_idx: 90
-#in_lfx0_idx: 8
+#in_rest_idx: 8
+#in_lfx0_idx: 257
 #The timbres are implemented for SzTP databases specifically. This implemementation might be changed in the future depending on circumstances.
 
 QS  "Relaxed"                                {*^f1_*,*^p1_*,*^p2_*}
@@ -42,24 +42,24 @@ QS  "L-Unvoiced_Consonant"                   {*^p-*,*^t-*,*^k-*,*^c-*,*^cz-*,*^C
 QS  "C-Unvoiced_Consonant"                   {*-p+*,*-t+*,*-k+*,*-c+*,*-cz+*,*-C+*,*-f+*,*-h+*,*-s+*,*-sz+*,*-S+*}
 QS  "R-Unvoiced_Consonant"                   {*+p=*,*+t=*,*+k=*,*+c=*,*+cz=*,*+C=*,*+f=*,*+h=*,*+s=*,*+sz=*,*+S=*}
 
-QS  "L-Front_Vowel"                          {*^i-*,*^e-*,*^E-*}
-QS  "C-Front_Vowel"                          {*-i+*,*-e+*,*-E+*}
-QS  "R-Front_Vowel"                          {*+i=*,*+e=*,*+E=*}
-QS  "L-Central_Vowel"                        {*^y-*,*^a-*}
-QS  "C-Central_Vowel"                        {*-y+*,*-a+*}
-QS  "R-Central_Vowel"                        {*+y=*,*+a=*}
-QS  "L-Back_Vowel"                           {*^u-*,*^o-*,*^A-*}
-QS  "C-Back_Vowel"                           {*-u+*,*-o+*,*-A+*}
-QS  "R-Back_Vowel"                           {*+u=*,*+o=*,*+A=*}
-QS  "L-Close_Vowel"                          {*^i-*,*^y-*,*^u-*}
-QS  "C-Close_Vowel"                          {*-i+*,*-y+*,*-u+*}
-QS  "R-Close_Vowel"                          {*+i=*,*+y=*,*+u=*}
-QS  "L-Mid_Vowel"                            {*^e-*,*^o-*,*^A-*,*^E-*}
-QS  "C-Mid_Vowel"                            {*-e+*,*-o+*,*-A+*,*-E+*}
-QS  "R-Mid_Vowel"                            {*+e=*,*+o=*,*+A=*,*+E=*}
-QS  "L-Open_Vowel"                           {*^a-*}
-QS  "C-Open_Vowel"                           {*-a+*}
-QS  "R-Open_Vowel"                           {*+a=*}
+QS  "L-Front"                                {*^i-*,*^e-*,*^E-*}
+QS  "C-Front"                                {*-i+*,*-e+*,*-E+*}
+QS  "R-Front"                                {*+i=*,*+e=*,*+E=*}
+QS  "L-Central"                              {*^y-*,*^a-*}
+QS  "C-Central"                              {*-y+*,*-a+*}
+QS  "R-Central"                              {*+y=*,*+a=*}
+QS  "L-Back"                                 {*^u-*,*^o-*,*^A-*}
+QS  "C-Back"                                 {*-u+*,*-o+*,*-A+*}
+QS  "R-Back"                                 {*+u=*,*+o=*,*+A=*}
+QS  "L-Close"                                {*^i-*,*^y-*,*^u-*}
+QS  "C-Close"                                {*-i+*,*-y+*,*-u+*}
+QS  "R-Close"                                {*+i=*,*+y=*,*+u=*}
+QS  "L-Mid"                                  {*^e-*,*^o-*,*^A-*,*^E-*}
+QS  "C-Mid"                                  {*-e+*,*-o+*,*-A+*,*-E+*}
+QS  "R-Mid"                                  {*+e=*,*+o=*,*+A=*,*+E=*}
+QS  "L-Open"                                 {*^a-*}
+QS  "C-Open"                                 {*-a+*}
+QS  "R-Open"                                 {*+a=*}
 QS  "L-Rounded"                              {*^A-*,*^E-*}
 QS  "C-Rounded"                              {*-A+*,*-E+*}
 QS  "R-Rounded"                              {*+A=*,*+E=*}
@@ -103,12 +103,12 @@ QS  "R-Voiced_Palatal"                       {*+N=*,*+dX=*,*+X=*,*+j=*,*+J=*}
 QS  "L-Unvoiced_Palatal"                     {*^C-*,*^S-*}
 QS  "C-Unvoiced_Palatal"                     {*-C+*,*-S+*}
 QS  "R-Unvoiced_Palatal"                     {*+C=*,*+S=*}
-QS  "L-Velar"                                {*^k-*,*^g-*,*^h-*,*^H-*}
-QS  "C-Velar"                                {*-k+*,*-g+*,*-h+*,*-H+*}
-QS  "R-Velar"                                {*+k=*,*+g=*,*+h=*,*+H=*}
-QS  "L-Voiced_Velar"                         {*^g-*,*^H-*}
-QS  "C-Voiced_Velar"                         {*-g+*,*-H+*}
-QS  "R-Voiced_Velar"                         {*+g=*,*+H=*}
+QS  "L-Velar"                                {*^k-*,*^g-*,*^h-*,*^H-*,*^ng-*}
+QS  "C-Velar"                                {*-k+*,*-g+*,*-h+*,*-H+*,*-ng+*}
+QS  "R-Velar"                                {*+k=*,*+g=*,*+h=*,*+H=*,*+ng=*}
+QS  "L-Voiced_Velar"                         {*^g-*,*^H-*,*^ng-*}
+QS  "C-Voiced_Velar"                         {*-g+*,*-H+*,*-ng+*}
+QS  "R-Voiced_Velar"                         {*+g=*,*+H=*,*+ng=*}
 QS  "L-Unvoiced_Velar"                       {*^k-*,*^h-*}
 QS  "C-Unvoiced_Velar"                       {*-k+*,*-h+*}
 QS  "R-Unvoiced_Velar"                       {*+k=*,*+h=*}
