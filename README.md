@@ -25,18 +25,18 @@ Note that while training you have to change "in_dim" in `/train/conf/train/*/mod
 
 "sztp_polish.hed":
 
-* acoustic: 306
-* in_rest_idx: 8
-* in_lfx0_idx: 257
-* duration: 302
-* timelag: 302
+* duration: 317
+* timelag: 317
+* acoustic: 321
+* in_rest_idx: 11
+* in_lfx0_idx: 272
 
 "sztp_polish_mdn.hed":
 
-* acoustic: 201
-* in_rest_idx: 8
-* in_lfx0_idx: 152
-* duration: 197
-* timelag: 197
+* duration: 209
+* timelag: 209
+* acoustic: 213
+* in_rest_idx: 11
+* in_lfx0_idx: 164
 
 *Special thanks to [Causticism](https://github.com/causticism) for helping with the project.*
