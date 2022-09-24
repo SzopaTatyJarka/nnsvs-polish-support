@@ -39,4 +39,4 @@ Note that while training you have to change "in_dim" in `/train/conf/train/*/mod
 * in_rest_idx: 11
 * in_lfx0_idx: 164
 
-*Special thanks to [Causticism](https://github.com/causticism) for helping with the project.*
+*Special thanks to [Intunist team](https://github.com/intunist) for helping with the project.*
