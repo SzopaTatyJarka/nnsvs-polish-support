@@ -1,9 +1,8 @@
-#HED for NNSVS - Polish implementation
-#in_dim: duration & timelag 209 // acoustic 213
-#in_rest_idx: 11
-#in_lfx0_idx: 164
-#The timbres can be modified freely by editing the FlagSlotN QS.
-#Ignore the remaining slots if you don't have enough timbres to fit them.
+# HED for NNSVS - Polish implementation
+# in_dim: duration & timelag 209 // acoustic 213
+# in_rest_idx: 11 // in_lfx0_idx: 164
+# The timbres can be modified freely by editing the FlagSlotN QS.
+# Ignore the remaining slots if you don't have enough timbres to fit them.
 QS  "FlagSlot0"             {*^FLAG0_*}
 QS  "FlagSlot1"             {*^FLAG1_*}
 QS  "FlagSlot2"             {*^FLAG2_*}
@@ -21,15 +20,15 @@ QS  "R-Silence"             {*+sil=*,*+pau=*,*+br=*,*+cl=*}
 QS  "L-Vowel"               {*^a-*,*^A-*,*^e-*,*^E-*,*^i-*,*^o-*,*^O-*,*^u-*,*^y-*}
 QS  "C-Vowel"               {*-a+*,*-A+*,*-e+*,*-E+*,*-i+*,*-o+*,*-O+*,*-u+*,*-y+*}
 QS  "R-Vowel"               {*+a=*,*+A=*,*+e=*,*+E=*,*+i=*,*+o=*,*+O=*,*+u=*,*+y=*}
-QS  "L-Consonant"           {*^p-*,*^b-*,*^t-*,*^d-*,*^k-*,*^g-*,*^c-*,*^dz-*,*^cz-*,*^dZ-*,*^C-*,*^d-*,*^f-*,*^w-*,*^s-*,*^z-*,*^sz-*,*^Z-*,*^S-*,*^X-*,*^h-*,*^hh-*,*^H-*,*^m-*,*^n-*,*^N-*,*^ng-*,*^r-*,*^l-*,*^ll-*,*^j-*,*^J-*,*^L-*}
-QS  "C-Consonant"           {*-p+*,*-b+*,*-t+*,*-d+*,*-k+*,*-g+*,*-c+*,*-dz+*,*-cz+*,*-dZ+*,*-C+*,*-d+*,*-f+*,*-w+*,*-s+*,*-z+*,*-sz+*,*-Z+*,*-S+*,*-X+*,*-h+*,*-hh+*,*-H+*,*-m+*,*-n+*,*-N+*,*-ng+*,*-r+*,*-l+*,*-ll+*,*-j+*,*-J+*,*-L+*}
-QS  "R-Consonant"           {*+p=*,*+b=*,*+t=*,*+d=*,*+k=*,*+g=*,*+c=*,*+dz=*,*+cz=*,*+dZ=*,*+C=*,*+d=*,*+f=*,*+w=*,*+s=*,*+z=*,*+sz=*,*+Z=*,*+S=*,*+X=*,*+h=*,*+hh=*,*+H=*,*+m=*,*+n=*,*+N=*,*+ng=*,*+r=*,*+l=*,*+ll=*,*+j=*,*+J=*,*+L=*}
-QS  "L-VUV_Voiced"          {*^cl-*,*^a-*,*^A-*,*^e-*,*^E-*,*^i-*,*^o-*,*^O-*,*^u-*,*^y-**^b-*,*^d-*,*^g-*,*^dz-*,*^dZ-*,*^d-*,*^w-*,*^hh-*,*^H-*,*^z-*,*^Z-*,*^X-*,*^m-*,*^n-*,*^N-*,*^ng-*,*^r-*,*^l-*,*^ll-*,*^j-*,*^J-*,*^L-*}
-QS  "C-VUV_Voiced"          {*-cl+*,*-a+*,*-A+*,*-e+*,*-E+*,*-i+*,*-o+*,*-O+*,*-u+*,*-y+**-b+*,*-d+*,*-g+*,*-dz+*,*-dZ+*,*-d+*,*-w+*,*-hh+*,*-H+*,*-z+*,*-Z+*,*-X+*,*-m+*,*-n+*,*-N+*,*-ng+*,*-r+*,*-l+*,*-ll+*,*-j+*,*-J+*,*-L+*}
-QS  "R-VUV_Voiced"          {*+cl=*,*+a=*,*+A=*,*+e=*,*+E=*,*+i=*,*+o=*,*+O=*,*+u=*,*+y=**+b=*,*+d=*,*+g=*,*+dz=*,*+dZ=*,*+d=*,*+w=*,*+hh=*,*+H=*,*+z=*,*+Z=*,*+X=*,*+m=*,*+n=*,*+N=*,*+ng=*,*+r=*,*+l=*,*+ll=*,*+j=*,*+J=*,*+L=*}
-QS  "L-VUV_Unvoiced"        {*^sil-*,*^pau-*,*^br-*,*^p-*,*^t-*,*^k-*,*^c-*,*^cz-*,*^C-*,*^f-*,*^h-*,*^s-*,*^sz-*,*^S-*}
-QS  "C-VUV_Unvoiced"        {*-sil+*,*-pau+*,*-br+*,*-p+*,*-t+*,*-k+*,*-c+*,*-cz+*,*-C+*,*-f+*,*-h+*,*-s+*,*-sz+*,*-S+*}
-QS  "R-VUV_Unvoiced"        {*+sil=*,*+pau=*,*+br=*,*+p=*,*+t=*,*+k=*,*+c=*,*+cz=*,*+C=*,*+f=*,*+h=*,*+s=*,*+sz=*,*+S=*}
+QS  "L-Consonant"           {*^p-*,*^b-*,*^t-*,*^d-*,*^k-*,*^g-*,*^f-*,*^w-*,*^s-*,*^z-*,*^sz-*,*^Z-*,*^S-*,*^X-*,*^h-*,*^c-*,*^dz-*,*^cz-*,*^dZ-*,*^C-*,*^dX-*,*^m-*,*^n-*,*^N-*,*^r-*,*^l-*,*^j-*,*^L-*,*^ng-*,*^J-*,*^ll-*,*^hh-*,*^H-*}
+QS  "C-Consonant"           {*-p+*,*-b+*,*-t+*,*-d+*,*-k+*,*-g+*,*-f+*,*-w+*,*-s+*,*-z+*,*-sz+*,*-Z+*,*-S+*,*-X+*,*-h+*,*-c+*,*-dz+*,*-cz+*,*-dZ+*,*-C+*,*-dX+*,*-m+*,*-n+*,*-N+*,*-r+*,*-l+*,*-j+*,*-L+*,*-ng+*,*-J+*,*-ll+*,*-hh+*,*-H+*}
+QS  "R-Consonant"           {*+p=*,*+b=*,*+t=*,*+d=*,*+k=*,*+g=*,*+f=*,*+w=*,*+s=*,*+z=*,*+sz=*,*+Z=*,*+S=*,*+X=*,*+h=*,*+c=*,*+dz=*,*+cz=*,*+dZ=*,*+C=*,*+dX=*,*+m=*,*+n=*,*+N=*,*+r=*,*+l=*,*+j=*,*+L=*,*+ng=*,*+J=*,*+ll=*,*+hh=*,*+H=*}
+QS  "L-VUV_Voiced"          {*^a-*,*^A-*,*^e-*,*^E-*,*^i-*,*^o-*,*^O-*,*^u-*,*^y-*,*^m-*,*^n-*,*^N-*,*^l-*,*^j-*,*^L-*,*^ng-*,*^J-*,*^ll-*,*^H-*}
+QS  "C-VUV_Voiced"          {*-a+*,*-A+*,*-e+*,*-E+*,*-i+*,*-o+*,*-O+*,*-u+*,*-y+*,*-m+*,*-n+*,*-N+*,*-l+*,*-j+*,*-L+*,*-ng+*,*-J+*,*-ll+*,*-H+*}
+QS  "R-VUV_Voiced"          {*+a=*,*+A=*,*+e=*,*+E=*,*+i=*,*+o=*,*+O=*,*+u=*,*+y=*,*+m=*,*+n=*,*+N=*,*+l=*,*+j=*,*+L=*,*+ng=*,*+J=*,*+ll=*,*+H=*}
+QS  "L-VUV_Unvoiced"        {*^p-*,*^t-*,*^k-*,*^f-*,*^s-*,*^sz-*,*^S-*,*^h-*,*^c-*,*^cz-*,*^C-*}
+QS  "C-VUV_Unvoiced"        {*-p+*,*-t+*,*-k+*,*-f+*,*-s+*,*-sz+*,*-S+*,*-h+*,*-c+*,*-cz+*,*-C+*}
+QS  "R-VUV_Unvoiced"        {*+p=*,*+t=*,*+k=*,*+f=*,*+s=*,*+sz=*,*+S=*,*+h=*,*+c=*,*+cz=*,*+C=*}
 # Silences
 QS  "L-sil"                 {*^sil-*}
 QS  "C-sil"                 {*-sil+*}

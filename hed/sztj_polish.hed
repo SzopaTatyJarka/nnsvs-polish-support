@@ -1,9 +1,8 @@
-#HED for NNSVS - Polish implementation
-#in_dim: duration & timelag 317 // acoustic 321
-#in_rest_idx: 11
-#in_lfx0_idx: 272
-#The timbres can be modified freely by editing the FlagSlotN QS.
-#Ignore the remaining slots if you don't have enough timbres to fit them.
+# HED for NNSVS - Polish implementation
+# in_dim: duration & timelag 317 // acoustic 321
+# in_rest_idx: 11 // in_lfx0_idx: 272
+# The timbres can be modified freely by editing the FlagSlotN QS.
+# Ignore the remaining slots if you don't have enough timbres to fit them.
 QS  "FlagSlot0"             {*^FLAG0_*}
 QS  "FlagSlot1"             {*^FLAG1_*}
 QS  "FlagSlot2"             {*^FLAG2_*}
@@ -21,15 +20,15 @@ QS  "R-Silence"             {*+sil=*,*+pau=*,*+br=*,*+cl=*}
 QS  "L-Vowel"               {*^a-*,*^A-*,*^e-*,*^E-*,*^i-*,*^o-*,*^O-*,*^u-*,*^y-*}
 QS  "C-Vowel"               {*-a+*,*-A+*,*-e+*,*-E+*,*-i+*,*-o+*,*-O+*,*-u+*,*-y+*}
 QS  "R-Vowel"               {*+a=*,*+A=*,*+e=*,*+E=*,*+i=*,*+o=*,*+O=*,*+u=*,*+y=*}
-QS  "L-Consonant"           {*^p-*,*^b-*,*^t-*,*^d-*,*^k-*,*^g-*,*^c-*,*^dz-*,*^cz-*,*^dZ-*,*^C-*,*^d-*,*^f-*,*^w-*,*^s-*,*^z-*,*^sz-*,*^Z-*,*^S-*,*^X-*,*^h-*,*^hh-*,*^H-*,*^m-*,*^n-*,*^N-*,*^ng-*,*^r-*,*^l-*,*^ll-*,*^j-*,*^J-*,*^L-*}
-QS  "C-Consonant"           {*-p+*,*-b+*,*-t+*,*-d+*,*-k+*,*-g+*,*-c+*,*-dz+*,*-cz+*,*-dZ+*,*-C+*,*-d+*,*-f+*,*-w+*,*-s+*,*-z+*,*-sz+*,*-Z+*,*-S+*,*-X+*,*-h+*,*-hh+*,*-H+*,*-m+*,*-n+*,*-N+*,*-ng+*,*-r+*,*-l+*,*-ll+*,*-j+*,*-J+*,*-L+*}
-QS  "R-Consonant"           {*+p=*,*+b=*,*+t=*,*+d=*,*+k=*,*+g=*,*+c=*,*+dz=*,*+cz=*,*+dZ=*,*+C=*,*+d=*,*+f=*,*+w=*,*+s=*,*+z=*,*+sz=*,*+Z=*,*+S=*,*+X=*,*+h=*,*+hh=*,*+H=*,*+m=*,*+n=*,*+N=*,*+ng=*,*+r=*,*+l=*,*+ll=*,*+j=*,*+J=*,*+L=*}
-QS  "L-VUV_Voiced"          {*^a-*,*^A-*,*^e-*,*^E-*,*^i-*,*^o-*,*^O-*,*^u-*,*^y-**^b-*,*^d-*,*^g-*,*^dz-*,*^dZ-*,*^d-*,*^w-*,*^hh-*,*^H-*,*^z-*,*^Z-*,*^X-*,*^m-*,*^n-*,*^N-*,*^ng-*,*^r-*,*^l-*,*^ll-*,*^j-*,*^J-*,*^L-*}
-QS  "C-VUV_Voiced"          {*-a+*,*-A+*,*-e+*,*-E+*,*-i+*,*-o+*,*-O+*,*-u+*,*-y+**-b+*,*-d+*,*-g+*,*-dz+*,*-dZ+*,*-d+*,*-w+*,*-hh+*,*-H+*,*-z+*,*-Z+*,*-X+*,*-m+*,*-n+*,*-N+*,*-ng+*,*-r+*,*-l+*,*-ll+*,*-j+*,*-J+*,*-L+*}
-QS  "R-VUV_Voiced"          {*+a=*,*+A=*,*+e=*,*+E=*,*+i=*,*+o=*,*+O=*,*+u=*,*+y=**+b=*,*+d=*,*+g=*,*+dz=*,*+dZ=*,*+d=*,*+w=*,*+hh=*,*+H=*,*+z=*,*+Z=*,*+X=*,*+m=*,*+n=*,*+N=*,*+ng=*,*+r=*,*+l=*,*+ll=*,*+j=*,*+J=*,*+L=*}
-QS  "L-VUV_Unvoiced"        {*^p-*,*^t-*,*^k-*,*^c-*,*^cz-*,*^C-*,*^f-*,*^h-*,*^s-*,*^sz-*,*^S-*}
-QS  "C-VUV_Unvoiced"        {*-p+*,*-t+*,*-k+*,*-c+*,*-cz+*,*-C+*,*-f+*,*-h+*,*-s+*,*-sz+*,*-S+*}
-QS  "R-VUV_Unvoiced"        {*+p=*,*+t=*,*+k=*,*+c=*,*+cz=*,*+C=*,*+f=*,*+h=*,*+s=*,*+sz=*,*+S=*}
+QS  "L-Consonant"           {*^p-*,*^b-*,*^t-*,*^d-*,*^k-*,*^g-*,*^f-*,*^w-*,*^s-*,*^z-*,*^sz-*,*^Z-*,*^S-*,*^X-*,*^h-*,*^c-*,*^dz-*,*^cz-*,*^dZ-*,*^C-*,*^dX-*,*^m-*,*^n-*,*^N-*,*^r-*,*^l-*,*^j-*,*^L-*,*^ng-*,*^J-*,*^ll-*,*^hh-*,*^H-*}
+QS  "C-Consonant"           {*-p+*,*-b+*,*-t+*,*-d+*,*-k+*,*-g+*,*-f+*,*-w+*,*-s+*,*-z+*,*-sz+*,*-Z+*,*-S+*,*-X+*,*-h+*,*-c+*,*-dz+*,*-cz+*,*-dZ+*,*-C+*,*-dX+*,*-m+*,*-n+*,*-N+*,*-r+*,*-l+*,*-j+*,*-L+*,*-ng+*,*-J+*,*-ll+*,*-hh+*,*-H+*}
+QS  "R-Consonant"           {*+p=*,*+b=*,*+t=*,*+d=*,*+k=*,*+g=*,*+f=*,*+w=*,*+s=*,*+z=*,*+sz=*,*+Z=*,*+S=*,*+X=*,*+h=*,*+c=*,*+dz=*,*+cz=*,*+dZ=*,*+C=*,*+dX=*,*+m=*,*+n=*,*+N=*,*+r=*,*+l=*,*+j=*,*+L=*,*+ng=*,*+J=*,*+ll=*,*+hh=*,*+H=*}
+QS  "L-VUV_Voiced"          {*^a-*,*^A-*,*^e-*,*^E-*,*^i-*,*^o-*,*^O-*,*^u-*,*^y-*,*^m-*,*^n-*,*^N-*,*^l-*,*^j-*,*^L-*,*^ng-*,*^J-*,*^ll-*,*^H-*}
+QS  "C-VUV_Voiced"          {*-a+*,*-A+*,*-e+*,*-E+*,*-i+*,*-o+*,*-O+*,*-u+*,*-y+*,*-m+*,*-n+*,*-N+*,*-l+*,*-j+*,*-L+*,*-ng+*,*-J+*,*-ll+*,*-H+*}
+QS  "R-VUV_Voiced"          {*+a=*,*+A=*,*+e=*,*+E=*,*+i=*,*+o=*,*+O=*,*+u=*,*+y=*,*+m=*,*+n=*,*+N=*,*+l=*,*+j=*,*+L=*,*+ng=*,*+J=*,*+ll=*,*+H=*}
+QS  "L-VUV_Unvoiced"        {*^p-*,*^t-*,*^k-*,*^f-*,*^s-*,*^sz-*,*^S-*,*^h-*,*^c-*,*^cz-*,*^C-*}
+QS  "C-VUV_Unvoiced"        {*-p+*,*-t+*,*-k+*,*-f+*,*-s+*,*-sz+*,*-S+*,*-h+*,*-c+*,*-cz+*,*-C+*}
+QS  "R-VUV_Unvoiced"        {*+p=*,*+t=*,*+k=*,*+f=*,*+s=*,*+sz=*,*+S=*,*+h=*,*+c=*,*+cz=*,*+C=*}
 # Table horisontal - Vowels
 QS  "L-Front"               {*^i-*,*^e-*,*^E-*}
 QS  "C-Front"               {*-i+*,*-e+*,*-E+*}
@@ -58,42 +57,42 @@ QS  "L-Unrounded"           {*^a-*,*^e-*,*^i-*,*^o-*,*^O-*,*^u-*,*^y-*}
 QS  "C-Unrounded"           {*-a+*,*-e+*,*-i+*,*-o+*,*-O+*,*-u+*,*-y+*}
 QS  "R-Unrounded"           {*+a=*,*+e=*,*+i=*,*+o=*,*+O=*,*+u=*,*+y=*}
 # Table horisontal - Consonants
-QS  "L-Labial"              {*^m-*,*^p-*,*^b-*,*^f-*,*^w-*}
-QS  "C-Labial"              {*-m+*,*-p+*,*-b+*,*-f+*,*-w+*}
-QS  "R-Labial"              {*+m=*,*+p=*,*+b=*,*+f=*,*+w=*}
-QS  "L-Voiced_Labial"       {*^m-*,*^b-*,*^w-*}
-QS  "C-Voiced_Labial"       {*-m+*,*-b+*,*-w+*}
-QS  "R-Voiced_Labial"       {*+m=*,*+b=*,*+w=*}
+QS  "L-Labial"              {*^p-*,*^b-*,*^f-*,*^w-*,*^m-*}
+QS  "C-Labial"              {*-p+*,*-b+*,*-f+*,*-w+*,*-m+*}
+QS  "R-Labial"              {*+p=*,*+b=*,*+f=*,*+w=*,*+m=*}
+QS  "L-Voiced_Labial"       {*^b-*,*^w-*,*^m-*}
+QS  "C-Voiced_Labial"       {*-b+*,*-w+*,*-m+*}
+QS  "R-Voiced_Labial"       {*+b=*,*+w=*,*+m=*}
 QS  "L-Unvoiced_Labial"     {*^p-*,*^f-*}
 QS  "C-Unvoiced_Labial"     {*-p+*,*-f+*}
 QS  "R-Unvoiced_Labial"     {*+p=*,*+f=*}
-QS  "L-Alveloar"            {*^n-*,*^t-*,*^d-*,*^c-*,*^dz-*,*^s-*,*^z-*,*^r-*,*^l-*,*^ll-*}
-QS  "C-Alveloar"            {*-n+*,*-t+*,*-d+*,*-c+*,*-dz+*,*-s+*,*-z+*,*-r+*,*-l+*,*-ll+*}
-QS  "R-Alveloar"            {*+n=*,*+t=*,*+d=*,*+c=*,*+dz=*,*+s=*,*+z=*,*+r=*,*+l=*,*+ll=*}
-QS  "L-Voiced_Alveloar"     {*^n-*,*^d-*,*^dz-*,*^z-*,*^r-*,*^l-*,*^ll-*}
-QS  "C-Voiced_Alveloar"     {*-n+*,*-d+*,*-dz+*,*-z+*,*-r+*,*-l+*,*-ll+*}
-QS  "R-Voiced_Alveloar"     {*+n=*,*+d=*,*+dz=*,*+z=*,*+r=*,*+l=*,*+ll=*}
-QS  "L-Unvoiced_Alveloar"   {*^t-*,*^c-*,*^s-*}
-QS  "C-Unvoiced_Alveloar"   {*-t+*,*-c+*,*-s+*}
-QS  "R-Unvoiced_Alveloar"   {*+t=*,*+c=*,*+s=*}
-QS  "L-Retroflex"           {*^cz-*,*^dZ-*,*^sz-*,*^Z-*}
-QS  "C-Retroflex"           {*-cz+*,*-dZ+*,*-sz+*,*-Z+*}
-QS  "R-Retroflex"           {*+cz=*,*+dZ=*,*+sz=*,*+Z=*}
-QS  "L-Voiced_Retroflex"    {*^dZ-*,*^Z-*}
-QS  "C-Voiced_Retroflex"    {*-dZ+*,*-Z+*}
-QS  "R-Voiced_Retroflex"    {*+dZ=*,*+Z=*}
-QS  "L-Unvoiced_Retroflex"  {*^cz-*,*^sz-*}
-QS  "C-Unvoiced_Retroflex"  {*-cz+*,*-sz+*}
-QS  "R-Unvoiced_Retroflex"  {*+cz=*,*+sz=*}
-QS  "L-Palatal"             {*^N-*,*^C-*,*^dX-*,*^S-*,*^X-*,*^j-*,*^J-*}
-QS  "C-Palatal"             {*-N+*,*-C+*,*-dX+*,*-S+*,*-X+*,*-j+*,*-J+*}
-QS  "R-Palatal"             {*+N=*,*+C=*,*+dX=*,*+S=*,*+X=*,*+j=*,*+J=*}
-QS  "L-Voiced_Palatal"      {*^N-*,*^dX-*,*^X-*,*^j-*,*^J-*}
-QS  "C-Voiced_Palatal"      {*-N+*,*-dX+*,*-X+*,*-j+*,*-J+*}
-QS  "R-Voiced_Palatal"      {*+N=*,*+dX=*,*+X=*,*+j=*,*+J=*}
-QS  "L-Unvoiced_Palatal"    {*^C-*,*^S-*}
-QS  "C-Unvoiced_Palatal"    {*-C+*,*-S+*}
-QS  "R-Unvoiced_Palatal"    {*+C=*,*+S=*}
+QS  "L-Alveloar"            {*^t-*,*^d-*,*^s-*,*^z-*,*^c-*,*^dz-*,*^n-*,*^r-*,*^l-*,*^ll-*}
+QS  "C-Alveloar"            {*-t+*,*-d+*,*-s+*,*-z+*,*-c+*,*-dz+*,*-n+*,*-r+*,*-l+*,*-ll+*}
+QS  "R-Alveloar"            {*+t=*,*+d=*,*+s=*,*+z=*,*+c=*,*+dz=*,*+n=*,*+r=*,*+l=*,*+ll=*}
+QS  "L-Voiced_Alveloar"     {*^d-*,*^z-*,*^dz-*,*^n-*,*^r-*,*^l-*,*^ll-*}
+QS  "C-Voiced_Alveloar"     {*-d+*,*-z+*,*-dz+*,*-n+*,*-r+*,*-l+*,*-ll+*}
+QS  "R-Voiced_Alveloar"     {*+d=*,*+z=*,*+dz=*,*+n=*,*+r=*,*+l=*,*+ll=*}
+QS  "L-Unvoiced_Alveloar"   {*^t-*,*^s-*,*^c-*}
+QS  "C-Unvoiced_Alveloar"   {*-t+*,*-s+*,*-c+*}
+QS  "R-Unvoiced_Alveloar"   {*+t=*,*+s=*,*+c=*}
+QS  "L-Retroflex"           {*^sz-*,*^Z-*,*^cz-*,*^dZ-*}
+QS  "C-Retroflex"           {*-sz+*,*-Z+*,*-cz+*,*-dZ+*}
+QS  "R-Retroflex"           {*+sz=*,*+Z=*,*+cz=*,*+dZ=*}
+QS  "L-Voiced_Retroflex"    {*^Z-*,*^dZ-*}
+QS  "C-Voiced_Retroflex"    {*-Z+*,*-dZ+*}
+QS  "R-Voiced_Retroflex"    {*+Z=*,*+dZ=*}
+QS  "L-Unvoiced_Retroflex"  {*^sz-*,*^cz-*}
+QS  "C-Unvoiced_Retroflex"  {*-sz+*,*-cz+*}
+QS  "R-Unvoiced_Retroflex"  {*+sz=*,*+cz=*}
+QS  "L-Palatal"             {*^S-*,*^X-*,*^C-*,*^dX-*,*^N-*,*^j-*,*^J-*}
+QS  "C-Palatal"             {*-S+*,*-X+*,*-C+*,*-dX+*,*-N+*,*-j+*,*-J+*}
+QS  "R-Palatal"             {*+S=*,*+X=*,*+C=*,*+dX=*,*+N=*,*+j=*,*+J=*}
+QS  "L-Voiced_Palatal"      {*^X-*,*^dX-*,*^N-*,*^j-*,*^J-*}
+QS  "C-Voiced_Palatal"      {*-X+*,*-dX+*,*-N+*,*-j+*,*-J+*}
+QS  "R-Voiced_Palatal"      {*+X=*,*+dX=*,*+N=*,*+j=*,*+J=*}
+QS  "L-Unvoiced_Palatal"    {*^S-*,*^C-*}
+QS  "C-Unvoiced_Palatal"    {*-S+*,*-C+*}
+QS  "R-Unvoiced_Palatal"    {*+S=*,*+C=*}
 QS  "L-Velar"               {*^k-*,*^g-*,*^h-*,*^ng-*,*^H-*}
 QS  "C-Velar"               {*-k+*,*-g+*,*-h+*,*-ng+*,*-H+*}
 QS  "R-Velar"               {*+k=*,*+g=*,*+h=*,*+ng=*,*+H=*}
@@ -107,9 +106,9 @@ QS  "L-Glottal"             {*^hh-*}
 QS  "C-Glottal"             {*-hh+*}
 QS  "R-Glottal"             {*+hh=*}
 # Table vertical - Consonants
-QS  "L-Nasal"               {*^m-*,*^n-*,*^N-*,*^J-*,*^ng-*}
-QS  "C-Nasal"               {*-m+*,*-n+*,*-N+*,*-J+*,*-ng+*}
-QS  "R-Nasal"               {*+m=*,*+n=*,*+N=*,*+J=*,*+ng=*}
+QS  "L-Nasal"               {*^m-*,*^n-*,*^N-*,*^ng-*,*^J-*}
+QS  "C-Nasal"               {*-m+*,*-n+*,*-N+*,*-ng+*,*-J+*}
+QS  "R-Nasal"               {*+m=*,*+n=*,*+N=*,*+ng=*,*+J=*}
 QS  "L-Plosive"             {*^p-*,*^b-*,*^t-*,*^d-*,*^k-*,*^g-*}
 QS  "C-Plosive"             {*-p+*,*-b+*,*-t+*,*-d+*,*-k+*,*-g+*}
 QS  "R-Plosive"             {*+p=*,*+b=*,*+t=*,*+d=*,*+k=*,*+g=*}
@@ -134,9 +133,9 @@ QS  "R-Fricative"           {*+f=*,*+w=*,*+s=*,*+z=*,*+sz=*,*+Z=*,*+S=*,*+X=*,*+
 QS  "L-Voiced_Fricative"    {*^w-*,*^z-*,*^Z-*,*^X-*,*^H-*}
 QS  "C-Voiced_Fricative"    {*-w+*,*-z+*,*-Z+*,*-X+*,*-H+*}
 QS  "R-Voiced_Fricative"    {*+w=*,*+z=*,*+Z=*,*+X=*,*+H=*}
-QS  "L-Unvoiced_Fricative"  {*^f-*,*^h-*,*^s-*,*^sz-*,*^S-*}
-QS  "C-Unvoiced_Fricative"  {*-f+*,*-h+*,*-s+*,*-sz+*,*-S+*}
-QS  "R-Unvoiced_Fricative"  {*+f=*,*+h=*,*+s=*,*+sz=*,*+S=*}
+QS  "L-Unvoiced_Fricative"  {*^f-*,*^s-*,*^sz-*,*^S-*,*^h-*}
+QS  "C-Unvoiced_Fricative"  {*-f+*,*-s+*,*-sz+*,*-S+*,*-h+*}
+QS  "R-Unvoiced_Fricative"  {*+f=*,*+s=*,*+sz=*,*+S=*,*+h=*}
 QS  "L-Tap_Trill"           {*^r-*}
 QS  "C-Tap_Trill"           {*-r+*}
 QS  "R-Tap_Trill"           {*+r=*}
