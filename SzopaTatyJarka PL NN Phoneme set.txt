@@ -6,7 +6,7 @@ cl - held closure between phonemes / glottal stop
 
 Vowels
 i - cIs
-y - bYłY
+y - bYł
 e - zlEw
 a - bAr
 o - sOk
@@ -18,27 +18,27 @@ A - kĄs
 Consonants
 p - Pas
 b - Brat
-t - Takt
+t - Tak
 d - Dąb
 k - Kul
 g - Garb
 
-f - Fajka
+f - Fiks
 w - Wuj
 s - Syk
 z - Ząb
 sz - SZyć
 Z - Żyć
-S - SIadł
-X - Zima
+S - Sik / Siadł
+X - Zima / Ziew
 h - CHór / Hel
 
 c - Car
 dz - wiDZ
 cz - CZar
 dZ - DŻins
-C - Cis
-dX - DZik
+C - Cis / Cie
+dX - DZik / DZiab
 
 m - Mak
 n - Nać
