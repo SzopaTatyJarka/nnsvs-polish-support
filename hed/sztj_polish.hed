@@ -3,6 +3,8 @@
 # in_rest_idx: 11 // in_lfx0_idx: 272
 # The timbres can be modified freely by editing the FlagSlotN QS.
 # Ignore the remaining slots if you don't have enough timbres to fit them.
+QS  "C-Silence"             {*-sil+*,*-pau+*}
+# Flags
 QS  "FlagSlot0"             {*^FLAG0_*}
 QS  "FlagSlot1"             {*^FLAG1_*}
 QS  "FlagSlot2"             {*^FLAG2_*}
@@ -14,9 +16,8 @@ QS  "FlagSlot7"             {*^FLAG7_*}
 QS  "FlagSlot8"             {*^FLAG8_*}
 QS  "FlagSlot9"             {*^FLAG9_*}
 # General
-QS  "L-Silence"             {*^sil-*,*^pau-*,*^br-*,*^cl-*}
-QS  "C-Silence"             {*-sil+*,*-pau+*,*-br+*,*-cl+*}
-QS  "R-Silence"             {*+sil=*,*+pau=*,*+br=*,*+cl=*}
+QS  "L-Silence"             {*^sil-*,*^pau-*}
+QS  "R-Silence"             {*+sil=*,*+pau=*}
 QS  "L-Vowel"               {*^a-*,*^A-*,*^e-*,*^E-*,*^i-*,*^o-*,*^O-*,*^u-*,*^y-*}
 QS  "C-Vowel"               {*-a+*,*-A+*,*-e+*,*-E+*,*-i+*,*-o+*,*-O+*,*-u+*,*-y+*}
 QS  "R-Vowel"               {*+a=*,*+A=*,*+e=*,*+E=*,*+i=*,*+o=*,*+O=*,*+u=*,*+y=*}
