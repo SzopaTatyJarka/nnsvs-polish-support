@@ -1,0 +1,58 @@
+Silences
+sil - silence
+pau - pause between musical phrases
+br - breath-in
+cl - held closure between phonemes / glottal stop
+
+Vowels
+i - cIs
+y - bYł
+e - zlEw
+a - bAr
+o - sOk
+u - Ul
+O - gÓra (dialectical)
+E - kĘs
+A - kĄs
+
+Consonants
+p - Pas
+b - Brat
+t - Tak
+d - Dąb
+k - Kul
+g - Garb
+
+f - Fiks
+w - Wuj
+s - Syk
+z - Ząb
+sz - SZyć
+Z - Żyć / RZeka
+S - Sik / Siadł / paŚ
+X - Zima / Ziew / pyŹ
+h - CHór / Hel
+
+c - Car
+dz - wiDZ
+cz - CZar
+dZ - DŻins
+C - Cis / Cie / piĆ
+dX - DZik / DZiab / mieDŹ
+
+m - Mak
+n - Nać
+N - Nic / Nie / kaŃ
+l - Luz
+r - Ryż
+L - Łuk
+j - Jak
+
+Allophones
+ng - baNk / tyNk / spiNka
+J - baŃka / koŃce
+ll - jedLe (dialectical "long l")
+hh - Hej (glottal h / exhale)
+H - nieCHby
+
+* Note these consonants can be replaced with "n / N / l / h" respectively and left to be guessed by a NN contextually. These are provided to enable more accurate labelling transcriptions and allow control over the subtle pronunciation of words.
