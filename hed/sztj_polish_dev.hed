@@ -1,0 +1,370 @@
+# HED for NNSVS - Polish implementation
+# Updated for NNSVS 0.1.0 by Intunist
+
+# Timbre flags are locationed below the phoneme definitions.
+# The timbres can be modified freely by editing the FlagSlotN QS.
+# Ignore the remaining slots if you don't have enough timbres to fit them.
+
+#in_dim: 318(duration/timelag), 322(acoustic)
+#in_rest_idx: 0
+#in_lfx0_idx: 272
+#in_ph_start_idx: 42 // in_ph_end_idx: 87
+
+# Phoneme definitions
+
+# Current Phoneme Contexts
+QS  "C-Silence"             {*-sil+*,*-pau+*}
+QS  "C-Vowel"               {*-a+*,*-A+*,*-e+*,*-E+*,*-i+*,*-o+*,*-O+*,*-u+*,*-y+*}
+QS  "C-Consonant"           {*-p+*,*-b+*,*-t+*,*-d+*,*-k+*,*-g+*,*-f+*,*-w+*,*-s+*,*-z+*,*-sz+*,*-Z+*,*-S+*,*-X+*,*-h+*,*-c+*,*-dz+*,*-cz+*,*-dZ+*,*-C+*,*-dX+*,*-m+*,*-n+*,*-N+*,*-r+*,*-l+*,*-j+*,*-L+*,*-ng+*,*-J+*,*-ll+*,*-hh+*,*-H+*}
+QS  "C-VUV_Voiced"          {*-a+*,*-A+*,*-e+*,*-E+*,*-i+*,*-o+*,*-O+*,*-u+*,*-y+*,*-m+*,*-n+*,*-N+*,*-l+*,*-j+*,*-L+*,*-ng+*,*-J+*,*-ll+*,*-H+*}
+QS  "C-VUV_Unvoiced"        {*-pau+*,*-p+*,*-t+*,*-k+*,*-f+*,*-s+*,*-sz+*,*-S+*,*-h+*,*-c+*,*-cz+*,*-C+*}
+# Horizontal Vowels
+QS  "C-Front"               {*-i+*,*-e+*,*-E+*}
+QS  "C-Central"             {*-y+*,*-a+*}
+QS  "C-Back"                {*-u+*,*-o+*,*-O+*,*-A+*}
+# Vertical Vowels
+QS  "C-Close"               {*-i+*,*-y+*,*-u+*}
+QS  "C-Mid"                 {*-e+*,*-o+*,*-O+*,*-A+*,*-E+*}
+QS  "C-Open"                {*-a+*}
+# Nasalization
+QS  "C-Rounded"             {*-A+*,*-E+*}
+QS  "C-Unrounded"           {*-a+*,*-e+*,*-i+*,*-o+*,*-O+*,*-u+*,*-y+*}
+# Horizontal Consonants
+QS  "C-Labial"              {*-p+*,*-b+*,*-f+*,*-w+*,*-m+*}
+QS  "C-Voiced_Labial"       {*-b+*,*-w+*,*-m+*}
+QS  "C-Unvoiced_Labial"     {*-p+*,*-f+*}
+QS  "C-Alveloar"            {*-t+*,*-d+*,*-s+*,*-z+*,*-c+*,*-dz+*,*-n+*,*-r+*,*-l+*,*-ll+*}
+QS  "C-Voiced_Alveloar"     {*-d+*,*-z+*,*-dz+*,*-n+*,*-r+*,*-l+*,*-ll+*}
+QS  "C-Unvoiced_Alveloar"   {*-t+*,*-s+*,*-c+*}
+QS  "C-Retroflex"           {*-sz+*,*-Z+*,*-cz+*,*-dZ+*}
+QS  "C-Voiced_Retroflex"    {*-Z+*,*-dZ+*}
+QS  "C-Unvoiced_Retroflex"  {*-sz+*,*-cz+*}
+QS  "C-Palatal"             {*-S+*,*-X+*,*-C+*,*-dX+*,*-N+*,*-j+*,*-J+*}
+QS  "C-Voiced_Palatal"      {*-X+*,*-dX+*,*-N+*,*-j+*,*-J+*}
+QS  "C-Unvoiced_Palatal"    {*-S+*,*-C+*}
+QS  "C-Velar"               {*-k+*,*-g+*,*-h+*,*-L+*,*-ng+*,*-H+*}
+QS  "C-Voiced_Velar"        {*-g+*,*-L+*,*-ng+*,*-H+*}
+QS  "C-Unvoiced_Velar"      {*-k+*,*-h+*}
+QS  "C-Glottal"             {*-hh+*}
+# Vertical Consonants
+QS  "C-Nasal"               {*-m+*,*-n+*,*-N+*,*-ng+*,*-J+*}
+QS  "C-Plosive"             {*-p+*,*-b+*,*-t+*,*-d+*,*-k+*,*-g+*}
+QS  "C-Voiced_Plosive"      {*-b+*,*-d+*,*-g+*}
+QS  "C-Unvoiced_Plosive"    {*-p+*,*-t+*,*-k+*}
+QS  "C-Affricate"           {*-c+*,*-dz+*,*-cz+*,*-dZ+*,*-C+*,*-dX+*}
+QS  "C-Voiced_Affricate"    {*-dz+*,*-dZ+*,*-dX+*}
+QS  "C-Unvoiced_Affricate"  {*-c+*,*-cz+*,*-C+*}
+QS  "C-Fricative"           {*-f+*,*-w+*,*-s+*,*-z+*,*-sz+*,*-Z+*,*-S+*,*-X+*,*-h+*,*-hh+*,*-H+*}
+QS  "C-Voiced_Fricative"    {*-w+*,*-z+*,*-Z+*,*-X+*,*-H+*}
+QS  "C-Unvoiced_Fricative"  {*-f+*,*-s+*,*-sz+*,*-S+*,*-h+*}
+QS  "C-Tap_Trill"           {*-r+*}
+QS  "C-Approximant"         {*-l+*,*-L+*,*-j+*,*-ll+*}
+# Silences
+QS  "C-sil"                 {*-sil+*}
+QS  "C-pau"                 {*-pau+*}
+QS  "C-br"                  {*-br+*}
+QS  "C-cl"                  {*-cl+*}
+# Vowels
+QS  "C-i"                   {*-i+*}
+QS  "C-y"                   {*-y+*}
+QS  "C-e"                   {*-e+*}
+QS  "C-a"                   {*-a+*}
+QS  "C-o"                   {*-o+*}
+QS  "C-u"                   {*-u+*}
+QS  "C-O"                   {*-O+*}
+QS  "C-E"                   {*-E+*}
+QS  "C-A"                   {*-A+*}
+# Consonants
+QS  "C-p"                   {*-p+*}
+QS  "C-b"                   {*-b+*}
+QS  "C-t"                   {*-t+*}
+QS  "C-d"                   {*-d+*}
+QS  "C-k"                   {*-k+*}
+QS  "C-g"                   {*-g+*}
+QS  "C-f"                   {*-f+*}
+QS  "C-w"                   {*-w+*}
+QS  "C-s"                   {*-s+*}
+QS  "C-z"                   {*-z+*}
+QS  "C-sz"                  {*-sz+*}
+QS  "C-Z"                   {*-Z+*}
+QS  "C-S"                   {*-S+*}
+QS  "C-X"                   {*-X+*}
+QS  "C-h"                   {*-h+*}
+QS  "C-c"                   {*-c+*}
+QS  "C-dz"                  {*-dz+*}
+QS  "C-cz"                  {*-cz+*}
+QS  "C-dZ"                  {*-dZ+*}
+QS  "C-C"                   {*-C+*}
+QS  "C-dX"                  {*-dX+*}
+QS  "C-m"                   {*-m+*}
+QS  "C-n"                   {*-n+*}
+QS  "C-N"                   {*-N+*}
+QS  "C-l"                   {*-l+*}
+QS  "C-r"                   {*-r+*}
+QS  "C-L"                   {*-L+*}
+QS  "C-j"                   {*-j+*}
+# Allophones
+QS  "C-ng"                  {*-ng+*}
+QS  "C-J"                   {*-J+*}
+QS  "C-ll"                  {*-ll+*}
+QS  "C-hh"                  {*-hh+*}
+QS  "C-H"                   {*-H+*}
+
+# Past Phoneme Contexts
+
+QS  "L-Silence"             {*^sil-*,*^pau-*}
+QS  "L-Vowel"               {*^a-*,*^A-*,*^e-*,*^E-*,*^i-*,*^o-*,*^O-*,*^u-*,*^y-*}
+QS  "L-Consonant"           {*^p-*,*^b-*,*^t-*,*^d-*,*^k-*,*^g-*,*^f-*,*^w-*,*^s-*,*^z-*,*^sz-*,*^Z-*,*^S-*,*^X-*,*^h-*,*^c-*,*^dz-*,*^cz-*,*^dZ-*,*^C-*,*^dX-*,*^m-*,*^n-*,*^N-*,*^r-*,*^l-*,*^j-*,*^L-*,*^ng-*,*^J-*,*^ll-*,*^hh-*,*^H-*}
+QS  "L-VUV_Voiced"          {*^a-*,*^A-*,*^e-*,*^E-*,*^i-*,*^o-*,*^O-*,*^u-*,*^y-*,*^m-*,*^n-*,*^N-*,*^l-*,*^j-*,*^L-*,*^ng-*,*^J-*,*^ll-*,*^H-*}
+QS  "L-VUV_Unvoiced"        {*^pau-*,*^p-*,*^t-*,*^k-*,*^f-*,*^s-*,*^sz-*,*^S-*,*^h-*,*^c-*,*^cz-*,*^C-*}
+
+QS  "L-Front"               {*^i-*,*^e-*,*^E-*}
+QS  "L-Central"             {*^y-*,*^a-*}
+QS  "L-Back"                {*^u-*,*^o-*,*^O-*,*^A-*}
+
+QS  "L-Close"               {*^i-*,*^y-*,*^u-*}
+QS  "L-Mid"                 {*^e-*,*^o-*,*^O-*,*^A-*,*^E-*}
+QS  "L-Open"                {*^a-*}
+
+QS  "L-Rounded"             {*^A-*,*^E-*}
+QS  "L-Unrounded"           {*^a-*,*^e-*,*^i-*,*^o-*,*^O-*,*^u-*,*^y-*}
+
+QS  "L-Labial"              {*^p-*,*^b-*,*^f-*,*^w-*,*^m-*}
+QS  "L-Voiced_Labial"       {*^b-*,*^w-*,*^m-*}
+QS  "L-Unvoiced_Labial"     {*^p-*,*^f-*}
+QS  "L-Alveloar"            {*^t-*,*^d-*,*^s-*,*^z-*,*^c-*,*^dz-*,*^n-*,*^r-*,*^l-*,*^ll-*}
+QS  "L-Voiced_Alveloar"     {*^d-*,*^z-*,*^dz-*,*^n-*,*^r-*,*^l-*,*^ll-*}
+QS  "L-Unvoiced_Alveloar"   {*^t-*,*^s-*,*^c-*}
+QS  "L-Retroflex"           {*^sz-*,*^Z-*,*^cz-*,*^dZ-*}
+QS  "L-Voiced_Retroflex"    {*^Z-*,*^dZ-*}
+QS  "L-Unvoiced_Retroflex"  {*^sz-*,*^cz-*}
+QS  "L-Palatal"             {*^S-*,*^X-*,*^C-*,*^dX-*,*^N-*,*^j-*,*^J-*}
+QS  "L-Voiced_Palatal"      {*^X-*,*^dX-*,*^N-*,*^j-*,*^J-*}
+QS  "L-Unvoiced_Palatal"    {*^S-*,*^C-*}
+QS  "L-Velar"               {*^k-*,*^g-*,*^h-*,*^L-*,*^ng-*,*^H-*}
+QS  "L-Voiced_Velar"        {*^g-*,*^L-*,*^ng-*,*^H-*}
+QS  "L-Unvoiced_Velar"      {*^k-*,*^h-*}
+QS  "L-Glottal"             {*^hh-*}
+
+QS  "L-Nasal"               {*^m-*,*^n-*,*^N-*,*^ng-*,*^J-*}
+QS  "L-Plosive"             {*^p-*,*^b-*,*^t-*,*^d-*,*^k-*,*^g-*}
+QS  "L-Voiced_Plosive"      {*^b-*,*^d-*,*^g-*}
+QS  "L-Unvoiced_Plosive"    {*^p-*,*^t-*,*^k-*}
+QS  "L-Affricate"           {*^c-*,*^dz-*,*^cz-*,*^dZ-*,*^C-*,*^dX-*}
+QS  "L-Voiced_Affricate"    {*^dz-*,*^dZ-*,*^dX-*}
+QS  "L-Unvoiced_Affricate"  {*^c-*,*^cz-*,*^C-*}
+QS  "L-Fricative"           {*^f-*,*^w-*,*^s-*,*^z-*,*^sz-*,*^Z-*,*^S-*,*^X-*,*^h-*,*^hh-*,*^H-*}
+QS  "L-Voiced_Fricative"    {*^w-*,*^z-*,*^Z-*,*^X-*,*^H-*}
+QS  "L-Unvoiced_Fricative"  {*^f-*,*^s-*,*^sz-*,*^S-*,*^h-*}
+QS  "L-Tap_Trill"           {*^r-*}
+QS  "L-Approximant"         {*^l-*,*^L-*,*^j-*,*^ll-*}
+
+QS  "L-sil"                 {*^sil-*}
+QS  "L-pau"                 {*^pau-*}
+QS  "L-br"                  {*^br-*}
+QS  "L-cl"                  {*^cl-*}
+
+QS  "L-i"                   {*^i-*}
+QS  "L-y"                   {*^y-*}
+QS  "L-e"                   {*^e-*}
+QS  "L-a"                   {*^a-*}
+QS  "L-o"                   {*^o-*}
+QS  "L-u"                   {*^u-*}
+QS  "L-O"                   {*^O-*}
+QS  "L-E"                   {*^E-*}
+QS  "L-A"                   {*^A-*}
+
+QS  "L-p"                   {*^p-*}
+QS  "L-b"                   {*^b-*}
+QS  "L-t"                   {*^t-*}
+QS  "L-d"                   {*^d-*}
+QS  "L-k"                   {*^k-*}
+QS  "L-g"                   {*^g-*}
+QS  "L-f"                   {*^f-*}
+QS  "L-w"                   {*^w-*}
+QS  "L-s"                   {*^s-*}
+QS  "L-z"                   {*^z-*}
+QS  "L-sz"                  {*^sz-*}
+QS  "L-Z"                   {*^Z-*}
+QS  "L-S"                   {*^S-*}
+QS  "L-X"                   {*^X-*}
+QS  "L-h"                   {*^h-*}
+QS  "L-c"                   {*^c-*}
+QS  "L-dz"                  {*^dz-*}
+QS  "L-cz"                  {*^cz-*}
+QS  "L-dZ"                  {*^dZ-*}
+QS  "L-C"                   {*^C-*}
+QS  "L-dX"                  {*^dX-*}
+QS  "L-m"                   {*^m-*}
+QS  "L-n"                   {*^n-*}
+QS  "L-N"                   {*^N-*}
+QS  "L-l"                   {*^l-*}
+QS  "L-r"                   {*^r-*}
+QS  "L-L"                   {*^L-*}
+QS  "L-j"                   {*^j-*}
+
+QS  "L-ng"                  {*^ng-*}
+QS  "L-J"                   {*^J-*}
+QS  "L-ll"                  {*^ll-*}
+QS  "L-hh"                  {*^hh-*}
+QS  "L-H"                   {*^H-*}
+
+# Future Phoneme Contexts
+
+QS  "R-Silence"             {*+sil=*,*+pau=*}
+QS  "R-Vowel"               {*+a=*,*+A=*,*+e=*,*+E=*,*+i=*,*+o=*,*+O=*,*+u=*,*+y=*}
+QS  "R-Consonant"           {*+p=*,*+b=*,*+t=*,*+d=*,*+k=*,*+g=*,*+f=*,*+w=*,*+s=*,*+z=*,*+sz=*,*+Z=*,*+S=*,*+X=*,*+h=*,*+c=*,*+dz=*,*+cz=*,*+dZ=*,*+C=*,*+dX=*,*+m=*,*+n=*,*+N=*,*+r=*,*+l=*,*+j=*,*+L=*,*+ng=*,*+J=*,*+ll=*,*+hh=*,*+H=*}
+QS  "R-VUV_Voiced"          {*+a=*,*+A=*,*+e=*,*+E=*,*+i=*,*+o=*,*+O=*,*+u=*,*+y=*,*+m=*,*+n=*,*+N=*,*+l=*,*+j=*,*+L=*,*+ng=*,*+J=*,*+ll=*,*+H=*}
+QS  "R-VUV_Unvoiced"        {*+pau=*,*+p=*,*+t=*,*+k=*,*+f=*,*+s=*,*+sz=*,*+S=*,*+h=*,*+c=*,*+cz=*,*+C=*}
+
+QS  "R-Front"               {*+i=*,*+e=*,*+E=*}
+QS  "R-Central"             {*+y=*,*+a=*}
+QS  "R-Back"                {*+u=*,*+o=*,*+O=*,*+A=*}
+
+QS  "R-Close"               {*+i=*,*+y=*,*+u=*}
+QS  "R-Mid"                 {*+e=*,*+o=*,*+O=*,*+A=*,*+E=*}
+QS  "R-Open"                {*+a=*}
+
+QS  "R-Rounded"             {*+A=*,*+E=*}
+QS  "R-Unrounded"           {*+a=*,*+e=*,*+i=*,*+o=*,*+O=*,*+u=*,*+y=*}
+
+QS  "R-Labial"              {*+p=*,*+b=*,*+f=*,*+w=*,*+m=*}
+QS  "R-Voiced_Labial"       {*+b=*,*+w=*,*+m=*}
+QS  "R-Unvoiced_Labial"     {*+p=*,*+f=*}
+QS  "R-Alveloar"            {*+t=*,*+d=*,*+s=*,*+z=*,*+c=*,*+dz=*,*+n=*,*+r=*,*+l=*,*+ll=*}
+QS  "R-Voiced_Alveloar"     {*+d=*,*+z=*,*+dz=*,*+n=*,*+r=*,*+l=*,*+ll=*}
+QS  "R-Unvoiced_Alveloar"   {*+t=*,*+s=*,*+c=*}
+QS  "R-Retroflex"           {*+sz=*,*+Z=*,*+cz=*,*+dZ=*}
+QS  "R-Voiced_Retroflex"    {*+Z=*,*+dZ=*}
+QS  "R-Unvoiced_Retroflex"  {*+sz=*,*+cz=*}
+QS  "R-Palatal"             {*+S=*,*+X=*,*+C=*,*+dX=*,*+N=*,*+j=*,*+J=*}
+QS  "R-Voiced_Palatal"      {*+X=*,*+dX=*,*+N=*,*+j=*,*+J=*}
+QS  "R-Unvoiced_Palatal"    {*+S=*,*+C=*}
+QS  "R-Velar"               {*+k=*,*+g=*,*+h=*,*+L=*,*+ng=*,*+H=*}
+QS  "R-Voiced_Velar"        {*+g=*,*+L=*,*+ng=*,*+H=*}
+QS  "R-Unvoiced_Velar"      {*+k=*,*+h=*}
+QS  "R-Glottal"             {*+hh=*}
+
+QS  "R-Nasal"               {*+m=*,*+n=*,*+N=*,*+ng=*,*+J=*}
+QS  "R-Plosive"             {*+p=*,*+b=*,*+t=*,*+d=*,*+k=*,*+g=*}
+QS  "R-Voiced_Plosive"      {*+b=*,*+d=*,*+g=*}
+QS  "R-Unvoiced_Plosive"    {*+p=*,*+t=*,*+k=*}
+QS  "R-Affricate"           {*+c=*,*+dz=*,*+cz=*,*+dZ=*,*+C=*,*+dX=*}
+QS  "R-Voiced_Affricate"    {*+dz=*,*+dZ=*,*+dX=*}
+QS  "R-Unvoiced_Affricate"  {*+c=*,*+cz=*,*+C=*}
+QS  "R-Fricative"           {*+f=*,*+w=*,*+s=*,*+z=*,*+sz=*,*+Z=*,*+S=*,*+X=*,*+h=*,*+hh=*,*+H=*}
+QS  "R-Voiced_Fricative"    {*+w=*,*+z=*,*+Z=*,*+X=*,*+H=*}
+QS  "R-Unvoiced_Fricative"  {*+f=*,*+s=*,*+sz=*,*+S=*,*+h=*}
+QS  "R-Tap_Trill"           {*+r=*}
+QS  "R-Approximant"         {*+l=*,*+L=*,*+j=*,*+ll=*}
+
+QS  "R-sil"                 {*+sil=*}
+QS  "R-pau"                 {*+pau=*}
+QS  "R-br"                  {*+br=*}
+QS  "R-cl"                  {*+cl=*}
+
+QS  "R-i"                   {*+i=*}
+QS  "R-y"                   {*+y=*}
+QS  "R-e"                   {*+e=*}
+QS  "R-a"                   {*+a=*}
+QS  "R-o"                   {*+o=*}
+QS  "R-u"                   {*+u=*}
+QS  "R-O"                   {*+O=*}
+QS  "R-E"                   {*+E=*}
+QS  "R-A"                   {*+A=*}
+
+QS  "R-p"                   {*+p=*}
+QS  "R-b"                   {*+b=*}
+QS  "R-t"                   {*+t=*}
+QS  "R-d"                   {*+d=*}
+QS  "R-k"                   {*+k=*}
+QS  "R-g"                   {*+g=*}
+QS  "R-f"                   {*+f=*}
+QS  "R-w"                   {*+w=*}
+QS  "R-s"                   {*+s=*}
+QS  "R-z"                   {*+z=*}
+QS  "R-sz"                  {*+sz=*}
+QS  "R-Z"                   {*+Z=*}
+QS  "R-S"                   {*+S=*}
+QS  "R-X"                   {*+X=*}
+QS  "R-h"                   {*+h=*}
+QS  "R-c"                   {*+c=*}
+QS  "R-dz"                  {*+dz=*}
+QS  "R-cz"                  {*+cz=*}
+QS  "R-dZ"                  {*+dZ=*}
+QS  "R-C"                   {*+C=*}
+QS  "R-dX"                  {*+dX=*}
+QS  "R-m"                   {*+m=*}
+QS  "R-n"                   {*+n=*}
+QS  "R-N"                   {*+N=*}
+QS  "R-l"                   {*+l=*}
+QS  "R-r"                   {*+r=*}
+QS  "R-L"                   {*+L=*}
+QS  "R-j"                   {*+j=*}
+
+QS  "R-ng"                  {*+ng=*}
+QS  "R-J"                   {*+J=*}
+QS  "R-ll"                  {*+ll=*}
+QS  "R-hh"                  {*+hh=*}
+QS  "R-H"                   {*+H=*}
+
+# Flags
+QS  "FlagSlot0"             {*^FLAG0_*}
+QS  "FlagSlot1"             {*^FLAG1_*}
+QS  "FlagSlot2"             {*^FLAG2_*}
+QS  "FlagSlot3"             {*^FLAG3_*}
+QS  "FlagSlot4"             {*^FLAG4_*}
+QS  "FlagSlot5"             {*^FLAG5_*}
+QS  "FlagSlot6"             {*^FLAG6_*}
+QS  "FlagSlot7"             {*^FLAG7_*}
+QS  "FlagSlot8"             {*^FLAG8_*}
+QS  "FlagSlot9"             {*^FLAG9_*}
+
+CQS "d1" {/D:(\NOTE)!}
+CQS "e1" {/E:(\NOTE)]}
+CQS "f1" {/F:(\NOTE)#}
+CQS "d2" {!(\d+)#}
+CQS "e2" {](\d+)^}
+CQS "f2" {#(\d+)#}
+CQS "p12" {-(\d+)!}
+CQS "p13" {!(\d+)[}
+CQS "p14" {[(\d+)$}
+CQS "p15" {$(\d+)]}
+CQS "a1" {/A:(\d+)-}
+CQS "b1" {/B:(\d+)_}
+CQS "c1" {/C:(\d+)+}
+CQS "a2" {-(\d+)-}
+CQS "a3" {-(\d+)@}
+CQS "b2" {_(\d+)_}
+CQS "b3" {_(\d+)@}
+CQS "c2" {+(\d+)+}
+CQS "c3" {+(\d+)@}
+CQS "e6" {!(\d+)@}
+CQS "e7" {@(\d+)#}
+CQS "e8" {#(\d+)+}
+CQS "d6" {|(\d+)&}
+CQS "d7" {&(\d+);}
+CQS "d8" {;(\d+)-}
+CQS "f6" {$(\d+)+}
+CQS "f7" {+(\d+)%}
+CQS "f8" {%(\d+);}
+
+CQS "e10_position_by_note_in_measure"      {](\d+)$}
+CQS "e11_position_by_note_in_measure"      {$(\d+)|}
+CQS "e12_position_by_10ms_in_measure"      {|(\d+)[}
+CQS "e13_position_by_10ms_in_measure"      {[(\d+)&}
+CQS "e14_position_by_96th_note_in_measure" {&(\d+)]}
+CQS "e15_position_by_96th_note_in_measure" {](\d+)=}
+CQS "e16_position_by_percent_in_measure"   {=(\d+)^}
+CQS "e17_position_by_percent_in_measure"   {^(\d+)~}
+CQS "e18_position_by_note"      {~(\d+)#}
+CQS "e19_position_by_note"      {#(\d+)_}
+CQS "e20_position_by_10ms"      {_(\d+);}
+CQS "e21_position_by_10ms"      {;(\d+)$}
+CQS "e22_position_by_96th_note" {$(\d+)&}
+CQS "e23_position_by_96th_note" {&(\d+)%}
+CQS "e24_position_by_percent"   {%(\d+)[}
+CQS "e25_position_by_percent"   {[(\d+)|}
+CQS "e26"                       {|(\d+)]}
+CQS "e57" {~([pm]\d+)+}
+CQS "e58" {+([pm]\d+)!}
