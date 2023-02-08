@@ -1,4 +1,4 @@
-# nnsvs-polish-support
+# NNSVS Polish support
 Files for Polish NNSVS dataset creation
 
 The repo contains HED and .table files required for NNSVS to support training and using Polish.
